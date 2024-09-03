@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "scss": "sass src/scss:build/css",
-    "scss:watch": "sass --watch src/scss:build/css",
+    "scss": "sass src/scss/main.scss:build/css/main.css",
+    "scss:watch": "sass --watch src/scss/main.scss:build/css/main.css --no-source-map --style compressed",
     "start": "npm-run-all --parallel scss:watch"
   },
   "keywords": [],

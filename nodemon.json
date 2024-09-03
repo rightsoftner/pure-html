@@ -1,5 +1,6 @@
 {
   "watch": ["src/scss"],
   "ext": "scss",
+  "ignore": ["src/scss/_*.scss"],
   "exec": "npm run scss"
 }
