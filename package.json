@@ -5,8 +5,16 @@
   "main": "index.js",
   "scripts": {
     "scss": "sass src/scss/main.scss:build/css/main.css",
-    "scss:watch": "sass --watch src/scss/main.scss:build/css/main.css --no-source-map --style compressed",
-    "start": "npm-run-all --parallel scss:watch"
+    "scss:watch": "sass --watch src/scss/main.scss:build/css/main.css",
+    "html": "cpx \"src/**/*.html\" build",
+    "html:watch": "cpx \"src/**/*.html\" build --watch",
+    "assets": "cpx \"src/assets/**/*\" build/assets",
+    "assets:watch": "cpx \"src/assets/**/*\" build/assets --watch",
+    "js": "cpx \"src/js/**/*\" build/js",
+    "js:watch": "cpx \"src/js/**/*\" build/js --watch",
+    "prebuild": "mkdir -p build/css build/assets",
+    "build": "npm-run-all prebuild scss html assets js",
+    "start": "npm-run-all --parallel scss:watch html:watch assets:watch js:watch"
   },
   "keywords": [],
   "author": "Volodymyr Nerovnia <nerv@i.ua>",
